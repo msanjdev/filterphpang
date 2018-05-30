@@ -1,0 +1,14 @@
+<mat-sidenav-container class="finder-container">
+  <mat-sidenav mode="side" opened #sidenav class="finder-sidenav" md-is-locked-open="true">
+    <h1>Filter Servers</h1>
+    <filter-form (filterChange)="applyFilter($event)"></filter-form>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    
+    <div class="finder-sidenav-content">
+      <h1>List of Servers <button mat-button (click)="sidenav.toggle()">&hArr;</button> </h1>
+      <server-table #servertable></server-table>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

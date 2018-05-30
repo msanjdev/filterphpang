@@ -1,0 +1,64 @@
+<p>
+    <button (click)="applyFilter()" mat-raised-button color=primary >Apply Filter</button>
+    &nbsp;
+    <!-- <button (click)="clearFilter()" mat-raised-button>Clear</button>
+    -->
+    </p>
+<form class="finder-form" style="width:200px">
+
+  <h4>Storage</h4>
+  <table>
+    <tr>
+      <td>{{storageList[0]}}</td>
+      
+      <td>
+          <mat-slider #storageSlider
+            thumbLabel
+            (input)="updateLabel($event)"
+            tickInterval="1"
+            min="1"
+            max="{{storageList.length}}"
+            [value]="selectedStorage"></mat-slider>
+      </td>
+      <td>{{storageList[storageList.length - 1]}}</td>
+    </tr>
+    <tr> 
+      <td colspan="3" style="text-align: center">
+          <span #lblStorage>{{selectedStorage}}</span>
+      </td>
+    </tr>
+  </table>
+  
+  <mat-form-field>
+    <mat-select placeholder="HDD Type?" #hddList>
+        <mat-option *ngFor="let hddType of hddTypes" 
+          (click)="onHddChanged(hddList)" [value]="hddType">
+          {{ hddType }}
+        </mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  <mat-form-field>
+      <mat-select placeholder="Where?" #locationSelect>
+          <mat-option *ngFor="let location of locationList" 
+          (click)="onLocationChanged(locationSelect)" [value]="location">
+            {{ location }}
+          </mat-option>
+      </mat-select>
+ </mat-form-field>   
+
+ <div style="max-height: 200px;overflow-y: scroll">
+    <h4>RAM</h4>
+    <mat-selection-list #ramList> 
+      <mat-list-option *ngFor="let ramCapacity of ramCapacityList"
+        [value]="ramCapacity" (click)="onRamChanged(ramList)">
+        {{ramCapacity}}
+      </mat-list-option>
+    </mat-selection-list>
+  </div>
+</form>
+<p>
+  <button (click)="applyFilter()" mat-raised-button color=primary >Apply Filter</button>
+  &nbsp;
+  <!-- <button (click)="clearFilter()" mat-raised-button>Clear</button> -->
+  </p>

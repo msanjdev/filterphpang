@@ -1,0 +1,26 @@
+<div>
+  <mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="model">
+      <mat-header-cell *matHeaderCellDef> Model </mat-header-cell>
+      <mat-cell *matCellDef="let svr"> {{svr.model}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="ram">
+        <mat-header-cell *matHeaderCellDef> RAM </mat-header-cell>
+        <mat-cell *matCellDef="let svr"> {{svr.ram}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="hdd">
+      <mat-header-cell *matHeaderCellDef> HDD </mat-header-cell>
+      <mat-cell *matCellDef="let svr"> {{svr.hdd}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="location">
+      <mat-header-cell *matHeaderCellDef> Location </mat-header-cell>
+      <mat-cell *matCellDef="let svr"> {{svr.location}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="price">
+      <mat-header-cell *matHeaderCellDef> Price </mat-header-cell>
+      <mat-cell *matCellDef="let svr"> {{svr.currency + svr.price}} </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

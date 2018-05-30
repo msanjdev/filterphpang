@@ -1,0 +1,29 @@
+  [
+  {
+    "model": "Dell R210Intel Xeon X3440 1",
+    "ram": "16GBDDR31",	
+    "hdd": "2x2TBSATA21",
+    "location": "AmsterdamAMS-011",
+    "currency": "€",
+    "price": 149.99
+  },
+
+  {
+    "model": "Dell R210Intel Xeon X34402",
+    "ram": "16GBDDR32",	
+    "hdd": "2x2TBSATA22",
+    "location": "AmsterdamAMS-012",
+    "currency": "€",
+    "price": 249.99
+  },
+    
+
+  {
+    "model": "Dell R210Intel Xeon X34403",
+    "ram": "16GBDDR33",	
+    "hdd": "2x2TBSATA23",
+    "location": "AmsterdamAMS-013",
+    "currency": "€",
+    "price": 439.99
+  }
+  ]
